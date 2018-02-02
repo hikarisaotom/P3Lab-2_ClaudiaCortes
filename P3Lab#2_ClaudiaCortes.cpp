@@ -9,6 +9,7 @@ int Num_Triangular(int);
 int Pedir_Numero();
 int Sub_Menu();
 void Numero_Cercano(int);
+void Catalan();
 double Operaciones_Triangulo (int,int,int);
 int main ()
 {
@@ -45,6 +46,9 @@ int main ()
 				cin>>LadoC;
 				Operaciones_Triangulo(LadoA,LadoB,LadoC);
 			       }break;
+			case 3: {//TRiangulo de pascal.
+					Catalan();
+				}break;
 		}//FIn del switch;
 	}//Fin del while de respuesta de usuario.
 	cout<<"Saliendo del porgrama..."<<endl;
@@ -52,6 +56,25 @@ int main ()
 	return 0;
 }//Fin del main.
 
+int factorial (int Limite){
+	int Acumulador_Factorial=1:
+	for(int i=0; i<=Limite; i++){
+	Acumulador_Factorial=Acumulador_Factorial*i;
+	}
+	return Acumulador_Factorial;
+}//Fin del metodo.
+void Catalan(){
+/*	int Num_Sig=0;
+	int Num_Ant=1;
+	int Num=0;
+	for(int i=0;i<=10;i++0{
+	Num=Num_Ant+1;
+	Num=*/
+	int Limite=Pedir_Numero();
+	for(int i=3;i<Limite;i++){
+		cout<<(factorial(2*1))/(factorial(i-1))*(factorial(i)) <<",";	
+	}//Fin del for.
+}//Fin del metodo.
 double Operaciones_Triangulo(int Lado_A, int Lado_B, int Lado_C){
 	int Lado_Mayor=0;
 	int Acumulador_Lados=0;
