@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string>
 #include <math.h>
+#define PI 3.14159265
 using namespace std;
 int menu();//Metodo que retorna la opcion del menu.
 int Num_Triangular(int);
@@ -57,6 +58,7 @@ double Operaciones_Triangulo(int Lado_A, int Lado_B, int Lado_C){
 	int Hipotenusa=0;
 	if (Lado_A<=Lado_B){
 		Acumulador_Lados=Lado_A*Lado_A;
+
 		Lado_Mayor=Lado_B;
 	}else{
 		 Acumulador_Lados=Lado_B*Lado_B;
@@ -76,15 +78,32 @@ double Operaciones_Triangulo(int Lado_A, int Lado_B, int Lado_C){
 		cout<< "El triangulo es un triangulo Rectangulo"<<endl;
 	}else{
 		cout<< "El Triangulo no es un triangulo Rectangulo"<<endl;
-	}	
+	}
+	int Temp=0;	
+	if (Lado_A==Lado_Mayor){
+		Temp=Lado_B;
+		Lado_B=Lado_A;
+		Lado_A=Temp;
+	}else if (Lado_C==Lado_Mayor){
+		Temp=Lado_B;
+		Lado_B=Lado_C;
+		Lado_C=Temp;
+	}
 
 	//EL AREA DEL TRIANGULO.
 	int S_Area=(Lado_A+Lado_B+Lado_C)/2;
 	int Area_Triangulo= S_Area* (S_Area-Lado_A)*(S_Area-Lado_B)*(S_Area-Lado_C);
-	cout <<"S Lados" <<Area_Triangulo;
+//	cout <<"S Lados" <<Area_Triangulo;
 	Area_Triangulo=sqrt(Area_Triangulo);
-	cout<<"El area del TRiangulo es: "<<Area_Triangulo;
+	cout<<"El area del Triangulo es: "<<Area_Triangulo<<endl;
+
 	//ANGULOS DEL TRIANGULO
+	
+	cout <<"A"<<Lado_A;
+	cout<<"B"<<Lado_B;
+	cout<<"C"<<Lado_C;
+ 	double Coseno= acos(((Lado_B*Lado_B)+(Lado_C+Lado_C)-(Lado_A*Lado_A))/(2*(Lado_B*Lado_C)))*180.0/PI;
+ 	cout<<"Lado"<<Coseno;
 	
 }//Fin del metodo.
 void Numero_Cercano(int Num_Evaluar){
