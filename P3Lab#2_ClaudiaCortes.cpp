@@ -81,13 +81,13 @@ double Operaciones_Triangulo(int Lado_A, int Lado_B, int Lado_C){
 	}
 	int Temp=0;	
 	if (Lado_A==Lado_Mayor){
-		Temp=Lado_B;
-		Lado_B=Lado_A;
+		Temp=Lado_C;
+		Lado_C=Lado_Mayor;
 		Lado_A=Temp;
-	}else if (Lado_C==Lado_Mayor){
-		Temp=Lado_B;
-		Lado_B=Lado_C;
-		Lado_C=Temp;
+	}else if (Lado_B==Lado_Mayor){
+		Temp=Lado_C;
+		Lado_C=Lado_Mayor;
+		Lado_B=Temp;
 	}
 
 	//EL AREA DEL TRIANGULO.
@@ -104,7 +104,7 @@ double Operaciones_Triangulo(int Lado_A, int Lado_B, int Lado_C){
 	cout<<"C"<<Lado_C<<endl;
  	double AnguloA= acos(((Lado_B*Lado_B)+(Lado_C+Lado_C)-(Lado_A*Lado_A))/(2*(Lado_B*Lado_C)))*180.0/PI;
  	cout<<"Angulo 1 "<<AnguloA;
-	double AnguloB= acos( (Lado_A*Lado_A)+(Lado_C*Lado_C)-(Lado_B*Lado_B)/(2*(Lado_A*Lado_C)))*180.0/PI;
+	double AnguloB= acos(((Lado_A*Lado_A)+(Lado_C*Lado_C)-(Lado_B*Lado_B))/(2*(Lado_A*Lado_C)))*180.0/PI;
 	cout<<"Angulo 2 " <<AnguloB;
 	cout<<"Angulo 3 "<<(180-(AnguloB+AnguloA));	
 }//Fin del metodo.
