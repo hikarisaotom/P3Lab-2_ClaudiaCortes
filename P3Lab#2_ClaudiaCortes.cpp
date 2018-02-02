@@ -1,18 +1,20 @@
 #include <iostream>
 #include <stdlib.h>
 #include <string>
+#include <math.h>
 using namespace std;
 int menu();//Metodo que retorna la opcion del menu.
 int Num_Triangular(int);
 int Pedir_Numero();
 int Sub_Menu();
 void Numero_Cercano(int);
+double Operaciones_Triangulo (int,int,int);
 int main ()
 {
 	int Opcion=9;
 	while ((Opcion=menu())!=5){
 		switch(Opcion){
-			case 1://Numero triangular.
+			case 1:{//Numero triangular.
 				int Sub_Opcion=Sub_Menu();
 				if (Sub_Opcion==1){
 					if (Num_Triangular(Pedir_Numero())){
@@ -22,22 +24,62 @@ int main ()
 					}//FIn del if.
 				}else if (Sub_Opcion==2){
 					int Aleatorio=rand() % 100 + 1;
-					cout<<"El Numero es: "<<Aleatorio;
+						cout<<"El Numero es: "<<Aleatorio;
 					if (Num_Triangular(Aleatorio)){
-					cout<<"NUmero Triangular";
+						cout<<"NUmero Triangular";
 					}else{
-					cout<<"NUmero NO Triangular";
+						cout<<"NUmero NO Triangular";
 					}//Fin del if
 				}else{//Numero mayor mas cercano.
-				Numero_Cercano(Pedir_Numero());
-				}
-			break;
+					Numero_Cercano(Pedir_Numero());
+				}//Fin del if 
+			 }break;
+			case 2:{//Angulos y area de un triangulo.
+				int LadoA,LadoB,LadoC=0;
+				cout << "Ingrese el Lado A";
+				cin >>LadoA;
+				cout <<"Ingrese el lado B";
+				cin>>LadoB;
+				cout <<"INgrese el Lado C";
+				cin>>LadoC;
+				Operaciones_Triangulo(LadoA,LadoB,LadoC);
+			       }break;
 		}//FIn del switch;
 	}//Fin del while de respuesta de usuario.
 	cout<<"Saliendo del porgrama..."<<endl;
 
 	return 0;
 }//Fin del main.
+
+double Operaciones_Triangulo(int Lado_A, int Lado_B, int Lado_C){
+	int Lado_Mayor=0;
+	int Acumulador_Lados=0;
+	int Hipotenusa=0;
+	if (Lado_A<=Lado_B){
+		Acumulador_Lados=Lado_A*Lado_A;
+		Lado_Mayor=Lado_B;
+	}else{
+		 Acumulador_Lados=Lado_B*Lado_B;
+	         Lado_Mayor=Lado_A;
+	}
+	cout <<"Acumulador Lados"<<Acumulador_Lados;
+	if (Lado_C<=Lado_Mayor){
+		Acumulador_Lados=Acumulador_Lados+(Lado_C*Lado_C);
+	}else if (Lado_Mayor<Lado_C){
+		Acumulador_Lados=Acumulador_Lados+(Lado_Mayor*Lado_Mayor);
+		Lado_Mayor=Lado_C;
+	}//FIn del if.
+	cout<<"Acumulador LaDOS"<<Acumulador_Lados;
+	cout <<"El NUmero Mayor es"<<Lado_Mayor;
+	Hipotenusa=Lado_Mayor*Lado_Mayor;
+	if(Acumulador_Lados==Hipotenusa){
+		cout<< "El triangulo es un triangulo Rectangulo";
+	}else{
+		cout<< "El Triangulo no es un triangulo Rectangulo";
+	}
+
+	
+}//Fin del metodo.
 void Numero_Cercano(int Num_Evaluar){
 	int Acum_Filas=0;
 	int Limite=0;
@@ -54,7 +96,7 @@ void Numero_Cercano(int Num_Evaluar){
 	
 	Acum_Filas=0;
 	for (int i=0;i<=Limite;i++){
-	Acum_Filas=Acum_Filas+i;
+		Acum_Filas=Acum_Filas+i;
 	}//FIn del for
 	cout<< "El triangular mas cercano es "<<Acum_Filas<<endl;
 }//Fin del Metodo.
