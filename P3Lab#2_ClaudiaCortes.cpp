@@ -99,12 +99,14 @@ double Operaciones_Triangulo(int Lado_A, int Lado_B, int Lado_C){
 
 	//ANGULOS DEL TRIANGULO
 	
-	cout <<"A"<<Lado_A;
-	cout<<"B"<<Lado_B;
-	cout<<"C"<<Lado_C;
- 	double Coseno= acos(((Lado_B*Lado_B)+(Lado_C+Lado_C)-(Lado_A*Lado_A))/(2*(Lado_B*Lado_C)))*180.0/PI;
- 	cout<<"Lado"<<Coseno;
-	
+	cout <<"A"<<Lado_A<<endl;
+	cout<<"B"<<Lado_B<<endl;
+	cout<<"C"<<Lado_C<<endl;
+ 	double AnguloA= acos(((Lado_B*Lado_B)+(Lado_C+Lado_C)-(Lado_A*Lado_A))/(2*(Lado_B*Lado_C)))*180.0/PI;
+ 	cout<<"Angulo 1 "<<AnguloA;
+	double AnguloB= acos( (Lado_A*Lado_A)+(Lado_C*Lado_C)-(Lado_B*Lado_B)/(2*(Lado_A*Lado_C)))*180.0/PI;
+	cout<<"Angulo 2 " <<AnguloB;
+	cout<<"Angulo 3 "<<(180-(AnguloB+AnguloA));	
 }//Fin del metodo.
 void Numero_Cercano(int Num_Evaluar){
 	int Acum_Filas=0;
