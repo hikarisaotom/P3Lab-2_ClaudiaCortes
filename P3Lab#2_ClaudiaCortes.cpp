@@ -62,22 +62,29 @@ double Operaciones_Triangulo(int Lado_A, int Lado_B, int Lado_C){
 		 Acumulador_Lados=Lado_B*Lado_B;
 	         Lado_Mayor=Lado_A;
 	}
-	cout <<"Acumulador Lados"<<Acumulador_Lados;
+//	cout <<"Acumulador Lados"<<Acumulador_Lados;
 	if (Lado_C<=Lado_Mayor){
 		Acumulador_Lados=Acumulador_Lados+(Lado_C*Lado_C);
 	}else if (Lado_Mayor<Lado_C){
 		Acumulador_Lados=Acumulador_Lados+(Lado_Mayor*Lado_Mayor);
 		Lado_Mayor=Lado_C;
 	}//FIn del if.
-	cout<<"Acumulador LaDOS"<<Acumulador_Lados;
-	cout <<"El NUmero Mayor es"<<Lado_Mayor;
+//	cout<<"Acumulador LaDOS"<<Acumulador_Lados;
+//	cout <<"El NUmero Mayor es"<<Lado_Mayor;
 	Hipotenusa=Lado_Mayor*Lado_Mayor;
 	if(Acumulador_Lados==Hipotenusa){
-		cout<< "El triangulo es un triangulo Rectangulo";
+		cout<< "El triangulo es un triangulo Rectangulo"<<endl;
 	}else{
-		cout<< "El Triangulo no es un triangulo Rectangulo";
-	}
+		cout<< "El Triangulo no es un triangulo Rectangulo"<<endl;
+	}	
 
+	//EL AREA DEL TRIANGULO.
+	int S_Area=(Lado_A+Lado_B+Lado_C)/2;
+	int Area_Triangulo= S_Area* (S_Area-Lado_A)*(S_Area-Lado_B)*(S_Area-Lado_C);
+	cout <<"S Lados" <<Area_Triangulo;
+	Area_Triangulo=sqrt(Area_Triangulo);
+	cout<<"El area del TRiangulo es: "<<Area_Triangulo;
+	//ANGULOS DEL TRIANGULO
 	
 }//Fin del metodo.
 void Numero_Cercano(int Num_Evaluar){
