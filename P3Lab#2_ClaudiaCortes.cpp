@@ -51,7 +51,7 @@ int main ()
 				for(int i=1;i<=Limite;i++){
 					cout<<" " <<Catalan(i);
 				}
-				}break;
+			}break;
 		}//FIn del switch;
 	}//Fin del while de respuesta de usuario.
 	cout<<"Saliendo del porgrama..."<<endl;
@@ -66,10 +66,12 @@ int factorial (int Limite){
 	}
 	return Acumulador_Factorial;
 }//Fin del metodo.
+
 int  Catalan(int Lim){
 	int denominador=factorial(2*Lim)/(factorial(Lim)*factorial(Lim+1));
 	return denominador;
 }//Fin del metodo.
+
 double Operaciones_Triangulo(int Lado_A, int Lado_B, int Lado_C){
 	int Lado_Mayor=0;
 	int Acumulador_Lados=0;
