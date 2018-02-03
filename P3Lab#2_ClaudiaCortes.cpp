@@ -62,7 +62,7 @@ int main ()
 int factorial (int Limite){
 	int Acumulador_Factorial=1;
 	for(int i=1; i<=Limite; i++){
-	Acumulador_Factorial=Acumulador_Factorial*i;
+		Acumulador_Factorial=Acumulador_Factorial*i;
 	}
 	return Acumulador_Factorial;
 }//Fin del metodo.
@@ -129,6 +129,7 @@ double Operaciones_Triangulo(int L_A, int Lado_B, int Lado_C){
 	cout<<"Angulo 2 " <<AnguloB<<endl;
 	cout<<"Angulo 3 "<<(180-(AnguloB+AnguloA))<<endl;	
 }//Fin del metodo.
+
 void Numero_Cercano(int Num_Evaluar){
 	int Acum_Filas=0;
 	int Limite=0;
