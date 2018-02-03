@@ -5,11 +5,11 @@
 #define PI 3.14159265
 using namespace std;
 int menu();//Metodo que retorna la opcion del menu.
-int Num_Triangular(int);
-int Pedir_Numero();
-int Sub_Menu();
-void Numero_Cercano(int);
-int  Catalan(int);
+int Num_Triangular(int);//Determina si es un NUmero Triangular.
+int Pedir_Numero();//Nos pide un numero para evaluar
+int Sub_Menu();//ES un submenu para el ejercicio 1
+void Numero_Cercano(int);//Determina cual es numero triangular mas cercano
+int  Catalan(int);// imprime los numeros catalanes
 double Operaciones_Triangulo (int,int,int);
 int main ()
 {
