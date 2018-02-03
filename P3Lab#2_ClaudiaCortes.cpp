@@ -9,7 +9,7 @@ int Num_Triangular(int);
 int Pedir_Numero();
 int Sub_Menu();
 void Numero_Cercano(int);
-void Catalan();
+int  Catalan(int);
 double Operaciones_Triangulo (int,int,int);
 int main ()
 {
@@ -47,7 +47,10 @@ int main ()
 				Operaciones_Triangulo(LadoA,LadoB,LadoC);
 			       }break;
 			case 3: {//TRiangulo de pascal.
-					Catalan();
+				int Limite=Pedir_Numero();
+				for(int i=1;i<=Limite;i++){
+					cout<<" " <<Catalan(i);
+				}
 				}break;
 		}//FIn del switch;
 	}//Fin del while de respuesta de usuario.
@@ -57,23 +60,15 @@ int main ()
 }//Fin del main.
 
 int factorial (int Limite){
-	int Acumulador_Factorial=1:
-	for(int i=0; i<=Limite; i++){
+	int Acumulador_Factorial=1;
+	for(int i=1; i<=Limite; i++){
 	Acumulador_Factorial=Acumulador_Factorial*i;
 	}
 	return Acumulador_Factorial;
 }//Fin del metodo.
-void Catalan(){
-/*	int Num_Sig=0;
-	int Num_Ant=1;
-	int Num=0;
-	for(int i=0;i<=10;i++0{
-	Num=Num_Ant+1;
-	Num=*/
-	int Limite=Pedir_Numero();
-	for(int i=3;i<Limite;i++){
-		cout<<(factorial(2*1))/(factorial(i-1))*(factorial(i)) <<",";	
-	}//Fin del for.
+int  Catalan(int Lim){
+	int denominador=factorial(2*Lim)/(factorial(Lim)*factorial(Lim+1));
+	return denominador;
 }//Fin del metodo.
 double Operaciones_Triangulo(int Lado_A, int Lado_B, int Lado_C){
 	int Lado_Mayor=0;
@@ -81,7 +76,6 @@ double Operaciones_Triangulo(int Lado_A, int Lado_B, int Lado_C){
 	int Hipotenusa=0;
 	if (Lado_A<=Lado_B){
 		Acumulador_Lados=Lado_A*Lado_A;
-
 		Lado_Mayor=Lado_B;
 	}else{
 		 Acumulador_Lados=Lado_B*Lado_B;
