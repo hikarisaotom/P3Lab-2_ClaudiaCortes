@@ -72,10 +72,11 @@ int  Catalan(int Lim){
 	return denominador;
 }//Fin del metodo.
 
-double Operaciones_Triangulo(int Lado_A, int Lado_B, int Lado_C){
+double Operaciones_Triangulo(int L_A, int Lado_B, int Lado_C){
 	int Lado_Mayor=0;
 	int Acumulador_Lados=0;
 	int Hipotenusa=0;
+	double Lado_A=(double)L_A;
 	if (Lado_A<=Lado_B){
 		Acumulador_Lados=Lado_A*Lado_A;
 		Lado_Mayor=Lado_B;
@@ -121,11 +122,12 @@ double Operaciones_Triangulo(int Lado_A, int Lado_B, int Lado_C){
 	cout <<"A"<<Lado_A<<endl;
 	cout<<"B"<<Lado_B<<endl;
 	cout<<"C"<<Lado_C<<endl;
- 	double AnguloA= acos(((Lado_B*Lado_B)+(Lado_C+Lado_C)-(Lado_A*Lado_A))/(2*(Lado_B*Lado_C)))*180.0/PI;
- 	cout<<"Angulo 1 "<<AnguloA;
-	double AnguloB= acos(((Lado_A*Lado_A)+(Lado_C*Lado_C)-(Lado_B*Lado_B))/(2*(Lado_A*Lado_C)))*180.0/PI;
-	cout<<"Angulo 2 " <<AnguloB;
-	cout<<"Angulo 3 "<<(180-(AnguloB+AnguloA));	
+ 	double AnguloA=( acos(((Lado_B*Lado_B)+(Lado_C*Lado_C)-(Lado_A*Lado_A))/(2*(Lado_B*Lado_C))))*180.0/PI;
+ 	cout<<"Angulo 1 "<<AnguloA<<endl;
+	double AnguloB=( acos(((Lado_A*Lado_A)+(Lado_C*Lado_C)-(Lado_B*Lado_B))/(2*(Lado_A*Lado_C))))*180.0/PI;
+
+	cout<<"Angulo 2 " <<AnguloB<<endl;
+	cout<<"Angulo 3 "<<(180-(AnguloB+AnguloA))<<endl;	
 }//Fin del metodo.
 void Numero_Cercano(int Num_Evaluar){
 	int Acum_Filas=0;
